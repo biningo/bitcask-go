@@ -35,8 +35,10 @@ func Open(dirPath string) (*DB, error) {
 		dbFile:  dbFile,
 		dirPath: dirPath,
 	}
-	err = db.load()
-	return db, err
+	if err = db.load(); err != nil {
+		return nil, err
+	}
+	return db, nil
 }
 
 func (db *DB) load() error {
