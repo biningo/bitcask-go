@@ -16,7 +16,7 @@ import (
 const LogFileName = "bitcask.db"
 
 var (
-	KeyIsNotExist = errors.New("Key is not exist")
+	KeyIsNotExist = errors.New("key is not exist")
 )
 
 type DB struct {
